@@ -1,10 +1,10 @@
 package com.school.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity
 public class Course {
@@ -16,9 +16,15 @@ public class Course {
 	private String title;
 	@Column
 	private String description;
-
 	@Column
 	private long refId;
+	/*
+	 * @Column private Date dateTime;
+	 * 
+	 * public Date getDateTime() { return dateTime; }
+	 * 
+	 * public void setDateTime(Date dateTime) { this.dateTime = dateTime; }
+	 */
 
 	public long getRefId() {
 		return refId;

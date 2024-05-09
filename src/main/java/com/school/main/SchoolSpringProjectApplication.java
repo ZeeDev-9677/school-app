@@ -12,7 +12,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableAutoConfiguration
 @Configuration
 @EnableCaching
-@ComponentScan({ "com.school" })
+@ComponentScan({"com.school","spring_config"})
 @EnableJpaRepositories(basePackages = "com.school")
 @EntityScan(basePackages = "com.school")
 @SpringBootApplication

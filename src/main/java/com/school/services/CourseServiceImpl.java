@@ -180,11 +180,4 @@ public class CourseServiceImpl implements CourseService {
 		}
 	}
 
-//	@Override
-//	public Course findById(long courseId) {
-//		// TODO Auto-generated method stub
-//		Course crse=courseDao.findById(courseId).get();
-//		return crse;
-//	}
-
 }

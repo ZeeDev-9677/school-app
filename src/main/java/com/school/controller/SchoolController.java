@@ -23,14 +23,14 @@ public class SchoolController {
 	private CourseService courseservice;
 
 	// ************testing of get request***********************
-	@RequestMapping(value = "/api/homeTest", method = RequestMethod.GET)
+	@RequestMapping(value = "/testt", method = RequestMethod.GET)
 	public String getHome() {
 		String str = "Hello I am";
 		return str;
 	}
 
 	// ************working end point for get request***********************
-	@RequestMapping(value = "/api/courses", method = RequestMethod.GET)
+	@RequestMapping(value = "/crss", method = RequestMethod.GET)
 	public List<Course> getCourse() throws Exception {
 
 		return this.courseservice.getCourse();
