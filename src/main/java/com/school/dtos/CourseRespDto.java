@@ -1,21 +1,15 @@
 package com.school.dtos;
 
-import java.util.List;
-
-import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class CourseDto {
-
-	private String crsId;
+public class CourseRespDto {
+	private Long crsId;
 	private String crsNm;
 	private String crsEnroll;
 	private String active;
-//	private String courseRefId;
-//	private String dateTime;
-	private List<StudentDto> studentDto;
 }

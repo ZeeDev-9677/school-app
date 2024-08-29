@@ -2,29 +2,27 @@ package com.school.services;
 
 import java.util.List;
 
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import com.school.entities.Student;
+import com.school.dtos.StudentDto;
+import com.school.dtos.StudentRespDto;
 
 public interface StudentService {
 
-	public Student addStudents(Student students);
+	public List<StudentRespDto> getAllStudents();
 
-	public List<Student> getAllStudents();
+	public ResponseEntity<String> deleteStudent(StudentDto studentDto);
 
-	public Student getStudents(Long id);
+	ResponseEntity<StudentRespDto> getStudent(StudentDto studentDto);
 
-	void delete(Long id);
-
-	public void update(Student student, Long id);
-
-	public List<Student> getStudentByAge(Long age);
-
-	public  ResponseEntity<HttpStatus> getByStudentId(Long id);
-
-	
-
-	
+//	public Student getStudents(Long id);
+//
+//	void delete(Long id);
+//
+//	public void update(Student student, Long id);
+//
+//	public List<Student> getStudentByAge(Long age);
+//
+//	public  ResponseEntity<HttpStatus> getByStudentId(Long id);
 
 }

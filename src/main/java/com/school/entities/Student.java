@@ -1,109 +1,100 @@
 package com.school.entities;
 
+import java.io.Serializable;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.NamedQuery;
+import jakarta.persistence.Table;
 
+/**
+ * The persistent class for the student database table.
+ * 
+ */
 @Entity
-public class Student {
+@Table(name = "student")
+@NamedQuery(name = "Student.findAll", query = "SELECT s FROM Student s")
+public class Student implements Serializable {
+	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO/* ,generator="native" */)
-	/*
-	 * @GenericGenerator( name = "native", strategy = "native" )
-	 */
-	@Column(unique = true, nullable = false)
-	public Long id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "stud_id", unique = true, nullable = false)
+	private Long studId;
 
-	@Column
-	public String name;
-	@Column
-	public String address;
-	@Column
-	public String father_name;
-	@Column
-	public String mother_name;
-	@Column
-	public String ph_no;
-	
-	@Column
-	public Integer age;
-	@Column
-	public Integer empId;
-	public String getName() {
-		return name;
+	@Column(length = 255)
+	private String active;
+
+	@Column(name = "first_name", length = 255)
+	private String firstName;
+
+	@Column(name = "last_name", length = 255)
+	private String lastName;
+
+	// bi-directional many-to-one association to Course
+	/*
+	 * @ManyToOne(cascade= {CascadeType.ALL},fetch=FetchType.LAZY)
+	 * 
+	 * @JoinColumn(name="course_id",nullable=false) private Course course;
+	 */
+
+	// generate below from db table
+//	@ManyToOne(cascade={CascadeType.ALL})
+//	@JoinColumn(name="student_crs_id", nullable=false)
+//	private Course course;
+
+	public Student() {
 	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getAddress() {
-		return address;
-	}
-	public void setAddress(String address) {
-		this.address = address;
-	}
-	public String getFather_name() {
-		return father_name;
-	}
-	public void setFather_name(String father_name) {
-		this.father_name = father_name;
-	}
-	public String getMother_name() {
-		return mother_name;
-	}
-	public void setMother_name(String mother_name) {
-		this.mother_name = mother_name;
-	}
-	public String getPh_no() {
-		return ph_no;
-	}
-	public void setPh_no(String ph_no) {
-		this.ph_no = ph_no;
-	}
-	
-	
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
-	
-	public Integer getAge() {
-		return age;
-	}
-	public void setAge(Integer age) {
-		this.age = age;
-	}
-	public Integer getEmpId() {
-		return empId;
-	}
-	public void setEmpId(Integer empId) {
-		this.empId = empId;
-	}
-	
-    public Student() {
-    	
-    }
-	
-	public Student(Long id, String name, String address, String father_name, String mother_name, String ph_no,
-			Integer age, Integer empId) {
+
+	public Student(Long studId, String active, String firstName, String lastName) {
 		super();
-		this.id = id;
-		this.name = name;
-		this.address = address;
-		this.father_name = father_name;
-		this.mother_name = mother_name;
-		this.ph_no = ph_no;
-		this.age = age;
-		this.empId = empId;
+		this.studId = studId;
+		this.active = active;
+		this.firstName = firstName;
+		this.lastName = lastName;
 	}
-	
-	
-	
-	
-	
+
+	public Long getStudId() {
+		return this.studId;
+	}
+
+	public void setStudId(Long studId) {
+		this.studId = studId;
+	}
+
+	public String getActive() {
+		return this.active;
+	}
+
+	public void setActive(String active) {
+		this.active = active;
+	}
+
+	public String getFirstName() {
+		return this.firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return this.lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+//	public Course getCourse() {
+//		return this.course;
+//	}
+//
+//	public void setCourse(Course course) {
+//		this.course = course;
+//	}
 
 }

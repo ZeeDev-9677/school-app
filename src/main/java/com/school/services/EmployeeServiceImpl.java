@@ -6,21 +6,21 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.school.dao.EmployeeDao;
+//import com.school.dao.EmployeeDao;
 //import com.school.dao.EmployeeDao;
 import com.school.dto.EmployeeReq;
 import com.school.dto.EmployeeRes;
-import com.school.entities.Employee;
+//import com.school.entities.Employee;
 
 import lombok.extern.slf4j.Slf4j;
 
-import com.school.entities.Employee;
+//import com.school.entities.Employee;
 //@Slf4j
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
 
-	@Autowired
-	EmployeeDao employeeDao;
+//	@Autowired
+//	EmployeeDao employeeDao;
 	ModelMapper modelMapper = new ModelMapper();
 
 	@Override
